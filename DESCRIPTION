@@ -1,33 +1,34 @@
 Package: industtry
 Title: A Toolkit for Structured Datasets Exploitation
-Version: 0.2.0
-Authors@R: 
+Version: 0.3.0
+Authors@R:
     person("Daniel", "Rakotomalala", , "rakdanielh@gmail.com", role = c("aut", "cre"))
-Description: This package proposes a set of functions that helps
-    exploiting structured datasets (mostly data frames) with an
-    industrialization approach.  Industrialization here means applying as
-    efficiently as possible the same procedure to any number of inputs as
-    long as these inputs have an identified common structure.
+Description: A set of functions for exploiting collections of structured
+    datasets (data frames) at scale. Core capabilities include batch
+    inspection and profiling, variable presence detection across datasets,
+    type consistency checking, format conversion, and file management
+    helpers. Designed for workflows involving multiple related datasets
+    with a common structure.
 License: MIT + file LICENSE
-Imports: 
+URL: https://github.com/danielrak/industtry
+BugReports: https://github.com/danielrak/industtry/issues
+Imports:
     dplyr,
     glue,
-    job,
     lubridate,
     magrittr,
-    plyr,
     purrr,
     rio,
-    rstudioapi,
     stats,
     stringr,
     tibble,
     tools,
+    utils,
     writexl
-Suggests: 
+Suggests:
     readxl,
-    testthat
-Config/fusen/version: 0.6.0
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

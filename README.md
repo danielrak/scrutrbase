@@ -2,7 +2,8 @@
 # scrutr
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/danielrak/scrutr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/danielrak/scrutr/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/danielrak/scrutrbase/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/danielrak/scrutrbase/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/danielrak/scrutrbase/branch/main/graph/badge.svg)](https://app.codecov.io/gh/danielrak/scrutrbase?branch=main)
 <!-- badges: end -->
 
 `scrutr` is an R toolkit for **scrutinising collections of structured datasets** (data frames). It targets workflows where you need to apply the same inspection, profiling, or conversion procedure across many related tables.

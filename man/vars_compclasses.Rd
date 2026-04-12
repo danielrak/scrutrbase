@@ -7,17 +7,16 @@
 vars_compclasses(data_frames)
 }
 \arguments{
-\item{data_frames}{Character. The datasets to explore. Need to exist in the Global Environment}
+\item{data_frames}{A named list of data frames to compare.}
 }
 \value{
-Variable list and their respective types across all inputted datasets.
+A data frame with a \code{vars_union} column and one column per dataset
+showing the class of each variable (\code{"-"} if absent from that dataset).
 }
 \description{
-Collection-level variables types comparison
+Compare the class of each variable across a collection of datasets.
 }
 \examples{
-library(magrittr)
-data(cars)
-data(mtcars)
-vars_compclasses(c("cars", "mtcars"))
+data_list <- list(cars = cars, mtcars = mtcars)
+vars_compclasses(data_list)
 }

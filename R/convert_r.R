@@ -18,7 +18,7 @@
 #' mask <- data.frame(
 #'   folder_path = rep(mydir, 2),
 #'   file = c("original_cars.rds", "original_mtcars.csv"),
-#'   converted_file = c("converted_cars.parquet", "converted_mtcars.parquet"),
+#'   converted_file = c("converted_cars.csv", "converted_mtcars.csv"),
 #'   to_convert = rep(1, 2)
 #' )
 #'
@@ -33,7 +33,7 @@
 #'
 #' # Clean up:
 #' file.remove(file.path(tempdir(),
-#'   c("converted_cars.parquet", "converted_mtcars.parquet", "mask_convert_r.xlsx")))
+#'   c("converted_cars.csv", "converted_mtcars.csv", "mask_convert_r.xlsx")))
 #' }
 convert_r <- function(mask_filepath, output_path) {
 
@@ -59,7 +59,7 @@ convert_r <- function(mask_filepath, output_path) {
     row <- prm[i, ]
     message("Converting: ", row$file)
 
-    data <- rio::import(file.path(row$folder_path, row$file))
+    data <- rio::import(file.path(row$folder_path, row$file), trust = TRUE)
     data <- dplyr::mutate(data, dplyr::across(
       dplyr::everything(),
       \(y) { y[nchar(as.character(y)) == 0] <- NA; y }

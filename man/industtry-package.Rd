@@ -6,7 +6,15 @@
 \alias{industtry-package}
 \title{industtry: A Toolkit for Structured Datasets Exploitation}
 \description{
-This package proposes a set of functions that helps exploiting structured datasets (mostly data frames) with an industrialization approach. Industrialization here means applying as efficiently as possible the same procedure to any number of inputs as long as these inputs have an identified common structure.
+A set of functions for exploiting collections of structured datasets (data frames) at scale. Core capabilities include batch inspection and profiling, variable presence detection across datasets, type consistency checking, format conversion, and file management helpers. Designed for workflows involving multiple related datasets with a common structure.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/danielrak/industtry}
+  \item Report bugs at \url{https://github.com/danielrak/industtry/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Daniel Rakotomalala \email{rakdanielh@gmail.com}

@@ -7,19 +7,17 @@
 vars_detect_not_everywhere(vars_detect_table)
 }
 \arguments{
-\item{vars_detect_table}{Output of the vars_detect() function in this package.
-This object must exists into the Global Environment.}
+\item{vars_detect_table}{Output of the \code{vars_detect()} function.}
 }
 \value{
-From vars_detect_table, extract variables that are not always present through all the datasets.
+A subset of \code{vars_detect_table} containing only variables
+that are not present in every dataset.
 }
 \description{
 Variable detection - inconsistent patterns
 }
 \examples{
-library(magrittr)
-data(cars)
-data(mtcars)
-vdetect_table <- vars_detect(c("cars", "mtcars"))
+data_list <- list(cars = cars, mtcars = mtcars)
+vdetect_table <- vars_detect(data_list)
 vars_detect_not_everywhere(vdetect_table)
 }

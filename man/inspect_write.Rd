@@ -2,32 +2,30 @@
 % Please edit documentation in R/inspect_write.R
 \name{inspect_write}
 \alias{inspect_write}
-\title{Inspect a data frame and write the output in an excel file}
+\title{Inspect a data frame and write the output to an Excel file}
 \usage{
-inspect_write(data_frame_name, output_path, output_label = NULL)
+inspect_write(data_frame, output_path, output_label = NULL)
 }
 \arguments{
-\item{data_frame_name}{Character 1L.
-The data.frame to explore. Must exist in the Global Environment}
+\item{data_frame}{A data frame to inspect.}
 
-\item{output_path}{Character 1L. Folder path where to write the excel output}
+\item{output_path}{Character. Folder path where the Excel output will be written.}
 
-\item{output_label}{Character 1L. Optional 1-length character vector to label output file.
-If NULL, data_frame_name will also used as label}
+\item{output_label}{Character. Optional label for the output file.
+If \code{NULL}, defaults to the deparsed name of \code{data_frame}.}
 }
 \value{
-See output xlsx file. Variable list of the dataset and systematic informations for each variable
+Invisibly returns the path to the written Excel file.
+The file contains the inspection table with prepended observation and variable counts.
 }
 \description{
-Inspect a data frame and write the output in an excel file
+Inspect a data frame and write the output to an Excel file
 }
 \examples{
-library(magrittr)
-data(cars)
-mydir <- file.path(tempdir(), "inspect_variants_tests_examples")
+mydir <- file.path(tempdir(), "inspect_write_example")
 dir.create(mydir)
-inspect_write(data_frame_name = "cars", 
-              output_path = mydir, 
+inspect_write(data_frame = cars,
+              output_path = mydir,
               output_label = "cars")
 readxl::read_xlsx(file.path(mydir, "inspect_cars.xlsx"))
 unlink(mydir, recursive = TRUE)

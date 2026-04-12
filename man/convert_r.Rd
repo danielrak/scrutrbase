@@ -2,48 +2,46 @@
 % Please edit documentation in R/convert_r.R
 \name{convert_r}
 \alias{convert_r}
-\title{Industrialized dataset formats conversion (RStudio only)}
+\title{Batch dataset format conversion using an Excel mask}
 \usage{
 convert_r(mask_filepath, output_path)
 }
 \arguments{
-\item{mask_filepath}{Character 1L. Entire file path of the excel mask}
+\item{mask_filepath}{Character. Full file path to the Excel mask.
+The mask must contain columns: \code{folder_path}, \code{file},
+\code{converted_file}, \code{to_convert} (1 to convert, 0 to skip).}
 
-\item{output_path}{Character 1L. Folder path where the converted datasets will be placed}
+\item{output_path}{Character. Folder path where converted files will be placed.}
+}
+\value{
+Invisibly returns a character vector of output file paths.
 }
 \description{
-Industrialized dataset formats conversion (RStudio only)
+Read an Excel mask describing files to convert, then import, clean, and
+re-export each file in the desired format. Cleaning includes replacing void
+character values (\code{""}) with \code{NA} and trimming whitespace.
 }
 \examples{
-library(magrittr)
-
 mydir <- system.file("permadir_examples_and_tests/convert_r", package = "industtry")
 
-# Datasets to convert (one-shot):
-# rio::export(cars, file.path(mydir, "original_cars.rds"))
-# rio::export(mtcars, file.path(mydir, "original_mtcars.csv"))
-
-# Create an artificial compatible mask with R:
 mask <- data.frame(
-  "folder_path" = rep(mydir, 2),
-  "file" = c("original_cars.rds", "original_mtcars.csv"),
-  "converted_file" = c("converted_cars.parquet", "converted_mtcars.parquet"),
-  "to_convert" = rep(1, 2)
+  folder_path = rep(mydir, 2),
+  file = c("original_cars.rds", "original_mtcars.csv"),
+  converted_file = c("converted_cars.csv", "converted_mtcars.csv"),
+  to_convert = rep(1, 2)
 )
-writexl::write_xlsx(mask, file.path(mydir, "mask_convert_r.xlsx"))
 
-if (rstudioapi::isAvailable()) {
-  convert_r(
-    mask_filepath = file.path(mydir, "mask_convert_r.xlsx"),
-    output_path = mydir)} else {
-      message("You're not in RStudio. This example will not run.")
-    }
+\donttest{
+mask_path <- file.path(tempdir(), "mask_convert_r.xlsx")
+writexl::write_xlsx(mask, mask_path)
 
-# See original and converted files:
-list.files(mydir) \%>\% purrr::keep(stringr::str_detect(., "cars"))
+convert_r(
+  mask_filepath = mask_path,
+  output_path = tempdir()
+)
 
-# Remove converted files for tests integrity:
-file.remove(file.path(
-  mydir,
-  c("converted_cars.parquet", "converted_mtcars.parquet")))
+# Clean up:
+file.remove(file.path(tempdir(),
+  c("converted_cars.csv", "converted_mtcars.csv", "mask_convert_r.xlsx")))
+}
 }

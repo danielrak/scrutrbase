@@ -28,7 +28,7 @@ inspect <- function(data_frame, nrow = FALSE) {
     )) %>%
     purrr::map_df(~ {
       dplyr::tibble(
-        class = class(.x),
+        class = paste(class(.x), collapse = "/"),
         nb_distinct = dplyr::n_distinct(.x),
         prop_distinct = nb_distinct / rows,
         nb_na = sum(is.na(.x)),

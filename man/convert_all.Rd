@@ -12,34 +12,34 @@ convert_all(
 )
 }
 \arguments{
-\item{input_folderpath}{Character 1L. Folder path containing datasets to convert.
-Datasets must be at the root of the folder}
+\item{input_folderpath}{Character. Folder path containing datasets to convert.}
 
-\item{considered_extensions}{Character. File extensions to consider for conversion within the folder.
-Must be supported by the rio:: package}
+\item{considered_extensions}{Character vector. File extensions to include
+(must be supported by \pkg{rio}).}
 
-\item{to}{Character 1L. The destination output format.
-Must be supported by the rio:: package}
+\item{to}{Character. The target output format (must be supported by \pkg{rio}).}
 
-\item{output_folderpath}{Character 1L. Folder path where converted file should be placed}
+\item{output_folderpath}{Character. Folder path for converted files
+(defaults to \code{input_folderpath}).}
 }
 \value{
-This function, for RStudio only, launches one background job for each file to convert
+Invisibly returns a character vector of output file paths.
 }
 \description{
-Convert all datasets within a folder to a given file format
+Scan a folder for files matching specified extensions, then convert each one
+to the target format. Void character values are replaced with \code{NA} and
+character whitespace is trimmed.
 }
 \examples{
-mydir <- system.file("permadir_examples_and_tests/convert_all", package = "industtry") 
+\donttest{
+mydir <- system.file("permadir_examples_and_tests/convert_all", package = "industtry")
+outdir <- tempdir()
 
-list.files(mydir)
+convert_all(input_folderpath = mydir,
+            considered_extensions = c("rds"),
+            to = "csv",
+            output_folderpath = outdir)
 
-if (rstudioapi::isAvailable()) {
-convert_all(input_folderpath = mydir, considered_extensions = c("rds", "csv"), 
-            to = "parquet", output_folderpath = mydir)
-
-list.files(mydir)
-
-unlink(file.path(mydir, c("original_cars.parquet", "original_mtcars.parquet")))
+list.files(outdir, pattern = "csv$")
 }
 }

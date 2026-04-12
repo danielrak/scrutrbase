@@ -7,41 +7,40 @@
 inspect_vars(input_path, output_path, output_label, considered_extensions)
 }
 \arguments{
-\item{input_path}{Character 1L. Folder path of datasets to explore}
+\item{input_path}{Character. Folder path containing datasets to explore.}
 
-\item{output_path}{Character 1L. Folder path where the exploration output will be stored}
+\item{output_path}{Character. Folder path where the Excel output will be written.}
 
-\item{output_label}{Character 1L. Describe concisely the collection to explore}
+\item{output_label}{Character. A concise label for the output file name.}
 
-\item{considered_extensions}{Character. Extensions of datasets retained for exploration
-in the input folder. Do not type the "." (dot) in it. E.g ("parquet" but not ".parquet")}
+\item{considered_extensions}{Character vector. File extensions to include
+(without the dot, e.g. \code{"rds"} not \code{".rds"}).}
 }
 \value{
-An excel file written on the computer containing exploration information
+Invisibly returns the path to the written Excel file.
+The file contains sheets: dims, inspect_tot, one per dataset inspection,
+vars_detect, vars_detect_everywhere, vars_detect_not_everywhere,
+vars_compclasses, vars_compclasses_allsame, vars_compclasses_not_allsame.
 }
 \description{
-Inspect a collection of datasets
+Read all datasets from a folder matching the specified extensions, inspect each one,
+and write a comprehensive Excel report covering variable presence, types, and per-dataset summaries.
 }
 \examples{
-mydir <- file.path(tempdir(), "inspect_vars_tests_examples")
+mydir <- file.path(tempdir(), "inspect_vars_example")
 dir.create(mydir)
 
-library(magrittr)
 saveRDS(cars, file.path(mydir, "cars1.rds"))
 saveRDS(mtcars, file.path(mydir, "cars2.rds"))
 
-# Code below illustrates how to use the function:
 inspect_vars(input_path = mydir, output_path = mydir,
-              output_label = "cardata", 
+             output_label = "cardata",
              considered_extensions = "rds")
 
- purrr::map(1:10, \(x)
-            rio::import(file.path(mydir, "inspect_vars_cardata.xlsx"),
-                        sheet = x)) \%>\%
- magrittr::set_names(c("dims", "inspect_tot", "inspect_cars1", "inspect_cars2",
-            "vars_detect", "vars_detect_everywhere", "vars_detect_not_everywhere",
-            "vars_compclasses", "vars_compclasses_allsame", "vars_compclasses_not_allsame"))
-            # code above illustrates all 10 sheets of the output
+# Read back the 10 sheets:
+purrr::map(1:10, \(x)
+           rio::import(file.path(mydir, "inspect_vars_cardata.xlsx"),
+                       sheet = x))
 
 unlink(mydir, recursive = TRUE)
 }

@@ -2,25 +2,22 @@
 % Please edit documentation in R/vars_detect_everywhere.R
 \name{vars_detect_everywhere}
 \alias{vars_detect_everywhere}
-\title{Variable detection - presence across all the datasets}
+\title{Variable detection - presence across all datasets}
 \usage{
 vars_detect_everywhere(vars_detect_table)
 }
 \arguments{
-\item{vars_detect_table}{Output of the vars_detect() function in this package.
-This object must exists into the Global Environment.}
+\item{vars_detect_table}{Output of the \code{vars_detect()} function.}
 }
 \value{
-From vars_detect_table, extract variables that are always present through all the datasets.
+A subset of \code{vars_detect_table} containing only variables
+present in all datasets.
 }
 \description{
-Variable detection - presence across all the datasets
+Variable detection - presence across all datasets
 }
 \examples{
-library(magrittr)
-library(dplyr)
-data(cars)
-data(mtcars)
-vdetect_table <- vars_detect(c("cars", "mtcars"))
+data_list <- list(cars = cars, mtcars = mtcars)
+vdetect_table <- vars_detect(data_list)
 vars_detect_everywhere(vdetect_table)
 }

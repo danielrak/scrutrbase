@@ -7,12 +7,16 @@
 replace_multiple(input_vector, replacements, replace_all = FALSE)
 }
 \arguments{
-\item{input_vector}{Character. Character vector on which replacements take place}
+\item{input_vector}{Character. Character vector on which replacements take place.}
 
-\item{replacements}{Character. Named character vector: replacement correspondences}
+\item{replacements}{Character. Named character vector defining replacement
+correspondences (names = patterns, values = replacements).}
 
-\item{replace_all}{Logical. If TRUE, stringr::str_replace_all() is used
-instead of stringr::str_replace()}
+\item{replace_all}{Logical. If \code{TRUE}, \code{stringr::str_replace_all()}
+is used instead of \code{stringr::str_replace()}.}
+}
+\value{
+Character vector with replacements applied.
 }
 \description{
 Replace character vector values using a correspondence approach

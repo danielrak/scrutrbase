@@ -2,26 +2,22 @@
 % Please edit documentation in R/vars_compclasses_not_allsame.R
 \name{vars_compclasses_not_allsame}
 \alias{vars_compclasses_not_allsame}
-\title{Variable class comparison - not all of same type across all datasets}
+\title{Variable class comparison - inconsistent types across datasets}
 \usage{
 vars_compclasses_not_allsame(vars_compclasses_table)
 }
 \arguments{
-\item{vars_compclasses_table}{Output of the vars_compclasses() function in this package.}
+\item{vars_compclasses_table}{Output of the \code{vars_compclasses()} function.}
 }
 \value{
-From vars_compclasses_table, extract type-inconsistent variables through all the datasets.
+A subset of \code{vars_compclasses_table} containing only variables
+with different classes across datasets where they appear.
 }
 \description{
-Variable class comparison - not all of same type across all datasets
+Variable class comparison - inconsistent types across datasets
 }
 \examples{
-library(magrittr)
-vcompclasses_table <- vars_compclasses(c("cars", "mtcars"))
-vars_compclasses_not_allsame(vcompclasses_table)
-library(magrittr)
-data(cars)
-data(mtcars)
-vcompclasses <- vars_compclasses(c("cars", "mtcars"))
+data_list <- list(cars = cars, mtcars = mtcars)
+vcompclasses <- vars_compclasses(data_list)
 vars_compclasses_not_allsame(vcompclasses)
 }

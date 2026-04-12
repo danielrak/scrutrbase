@@ -44,7 +44,7 @@ test_that("inspect handles POSIXct columns", {
   result <- inspect(df)
 
   expect_equal(nrow(result), 2)
-  expect_true("Date-time" %in% result$class || "POSIXct" %in% result$class)
+  expect_true(any(grepl("Date-time", result$class)))
 })
 
 test_that("inspect errors on non-dataframe", {

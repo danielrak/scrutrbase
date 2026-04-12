@@ -46,7 +46,7 @@ path_move <- function(path_vector, path_separator = "/", move) {
     stop("move must be different from 0")
   }
 
-  split <- strsplit(path_vector, path_separator)
+  split <- strsplit(path_vector, path_separator, fixed = TRUE)
   plevels <- purrr::map_dbl(split, length)
 
   if (length(rle(plevels)$values) != 1) {

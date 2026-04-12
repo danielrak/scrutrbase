@@ -7,17 +7,17 @@
 vars_detect(data_frames)
 }
 \arguments{
-\item{data_frames}{Character. The datasets to explore. Need to exist in the Global Environment}
+\item{data_frames}{A named list of data frames to compare.}
 }
 \value{
-Variable list and indicators of presences/absences across all inputted datasets.
+A data frame with a \code{vars_union} column listing all variables,
+and one column per dataset indicating \code{"ok"} (present) or \code{"-"} (absent).
+Rows are sorted to highlight presence/absence patterns.
 }
 \description{
-Variable detection patterns
+Detect the presence or absence of each variable across a collection of datasets.
 }
 \examples{
-library(magrittr)
-data(cars)
-data(mtcars)
-vars_detect(c("cars", "mtcars"))
+data_list <- list(cars = cars, mtcars = mtcars)
+vars_detect(data_list)
 }

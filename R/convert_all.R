@@ -19,11 +19,11 @@
 #' outdir <- tempdir()
 #'
 #' convert_all(input_folderpath = mydir,
-#'             considered_extensions = c("rds", "csv"),
-#'             to = "parquet",
+#'             considered_extensions = c("rds"),
+#'             to = "csv",
 #'             output_folderpath = outdir)
 #'
-#' list.files(outdir, pattern = "parquet$")
+#' list.files(outdir, pattern = "csv$")
 #' }
 convert_all <- function(input_folderpath, considered_extensions,
                         to, output_folderpath = input_folderpath) {

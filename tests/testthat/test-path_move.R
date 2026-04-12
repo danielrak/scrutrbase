@@ -25,7 +25,7 @@ test_that("path_move backward works", {
 
 test_that("path_move with custom separator", {
   pvector <- c("a\\b\\c", "d\\e\\f")
-  expect_identical(path_move(pvector, "\\\\", 2), c("a\\b", "d\\e"))
+  expect_identical(path_move(pvector, "\\", 2), c("a\\b", "d\\e"))
 })
 
 test_that("path_move errors correctly", {

@@ -2,26 +2,22 @@
 % Please edit documentation in R/vars_compclasses_allsame.R
 \name{vars_compclasses_allsame}
 \alias{vars_compclasses_allsame}
-\title{Variable class comparison - all of same type across all datasets}
+\title{Variable class comparison - consistent types across all datasets}
 \usage{
 vars_compclasses_allsame(vars_compclasses_table)
 }
 \arguments{
-\item{vars_compclasses_table}{Output of the vars_compclasses() function in this package.}
+\item{vars_compclasses_table}{Output of the \code{vars_compclasses()} function.}
 }
 \value{
-From vars_compclasses_table, extract type-consistent variables through all the datasets.
+A subset of \code{vars_compclasses_table} containing only variables
+with the same class across all datasets where they appear.
 }
 \description{
-Variable class comparison - all of same type across all datasets
+Variable class comparison - consistent types across all datasets
 }
 \examples{
-library(magrittr)
-vcompclasses_table <- vars_compclasses(c("cars", "mtcars"))
-vars_compclasses_allsame(vcompclasses_table)
-library(magrittr)
-data(cars)
-data(mtcars)
-vcompclasses <- vars_compclasses(c("cars", "mtcars"))
+data_list <- list(cars = cars, mtcars = mtcars)
+vcompclasses <- vars_compclasses(data_list)
 vars_compclasses_allsame(vcompclasses)
 }

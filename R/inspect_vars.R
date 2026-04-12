@@ -62,10 +62,11 @@ inspect_vars <- function(input_path, output_path,
 
   # Dimensions summary
   dims <- purrr::map_dfr(seq_along(datasets), function(idx) {
+    df <- datasets[[idx]]
     tibble::tibble(
       datasets = clean_names[idx],
-      nobs = nrow(datasets[[idx]]),
-      nvar = ncol(datasets[[idx]])
+      nobs = nrow(df),
+      nvar = ncol(df)
     )
   })
 
@@ -80,9 +81,10 @@ inspect_vars <- function(input_path, output_path,
 
   # Individual inspection sheets (with prepended dims rows for backward compat)
   inspect_sheets <- purrr::map(seq_along(inspections), function(idx) {
+    df <- datasets[[idx]]
     i <- inspections[[idx]]
     rbind(
-      c("Obs = ", nrow(datasets[[idx]]), rep("", ncol(i) - 1)),
+      c("Obs = ", nrow(df), rep("", ncol(i) - 1)),
       c("Nvars = ", nrow(i), rep("", ncol(i) - 1)),
       cbind(1:nrow(i), i)
     )

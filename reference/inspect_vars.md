@@ -48,8 +48,6 @@ saveRDS(mtcars, file.path(mydir, "cars2.rds"))
 inspect_vars(input_path = mydir, output_path = mydir,
              output_label = "cardata",
              considered_extensions = "rds")
-#> Warning: Missing `trust` will be set to FALSE by default for RDS in 2.0.0.
-#> Warning: Missing `trust` will be set to FALSE by default for RDS in 2.0.0.
 
 # Read back the 10 sheets:
 purrr::map(1:10, \(x)

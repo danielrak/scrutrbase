@@ -49,7 +49,7 @@ inspect_vars <- function(input_path, output_path,
   # Import all datasets into a LOCAL named list (no global env pollution)
   datasets <- purrr::map(
     lfiles,
-    \(f) rio::import(file.path(input_path, f), encoding = "latin1")
+    \(f) rio::import(file.path(input_path, f), encoding = "latin1", trust = TRUE)
   ) %>%
     stats::setNames(lfiles)
 

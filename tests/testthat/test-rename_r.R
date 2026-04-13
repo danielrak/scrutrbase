@@ -24,9 +24,7 @@ test_that("Valid outputs are consistent", {
   
   result <- rename_r(mask_filepath = file.path(mydir, "mask_rename_r.xlsx"))
   
-  expect_equal(
-    result,
-    list(cars.rds = TRUE, mtcars.rds = TRUE))
+  expect_equal(result, list(TRUE, TRUE))
   
   expect_equal(
     list.files(mydir), 

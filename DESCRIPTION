@@ -11,6 +11,8 @@ Description: Provides a coherent interface for exploring and transforming
 License: MIT + file LICENSE
 URL: https://github.com/danielrak/scrutr
 BugReports: https://github.com/danielrak/scrutr/issues
+Depends:
+    R (>= 4.1.0)
 Imports:
     dplyr,
     glue,

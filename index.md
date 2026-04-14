@@ -1,5 +1,8 @@
 # scrutr
 
+> `scrutr` was previously developed under the name `industtry`
+> (2024-2025) and has been renamed ahead of its first CRAN release.
+
 `scrutr` is an R toolkit for **scrutinizing collections of structured
 datasets** (data frames). It targets workflows where you need to apply
 the same inspection, profiling, or conversion procedure across many

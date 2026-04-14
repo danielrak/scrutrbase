@@ -4,10 +4,10 @@ Version: 0.3.0
 Authors@R:
     person("Daniel", "Rakotomalala", , "rakdanielh@gmail.com", role = c("aut", "cre"))
 Description: Provides a coherent interface for exploring and transforming
-    multiple related data frames that share a common structure. Complements
-    single-dataset inspection tools by operating across an entire collection
-    at once. Also includes lightweight utilities for related file and folder
-    management tasks.
+    multiple related data frames that share a common structure.
+    Complements single-dataset inspection tools by operating across an
+    entire collection at once. Also includes lightweight utilities for
+    related file and folder management tasks.
 License: MIT + file LICENSE
 URL: https://github.com/danielrak/scrutr
 BugReports: https://github.com/danielrak/scrutr/issues

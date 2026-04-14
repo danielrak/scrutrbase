@@ -21,7 +21,8 @@ ljoin_checks(ltable, rtable, ...)
 
 - ...:
 
-  Params. Any other arguments of dplyr::left_join()
+  Any other arguments passed to
+  [`dplyr::left_join()`](https://dplyr.tidyverse.org/reference/mutate-joins.html).
 
 ## Value
 

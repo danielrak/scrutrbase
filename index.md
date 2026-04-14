@@ -1,6 +1,6 @@
 # scrutr
 
-`scrutr` is an R toolkit for **scrutinising collections of structured
+`scrutr` is an R toolkit for **scrutinizing collections of structured
 datasets** (data frames). It targets workflows where you need to apply
 the same inspection, profiling, or conversion procedure across many
 related tables.

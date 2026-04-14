@@ -31,7 +31,7 @@
 - [`path_move()`](../reference/path_move.md) uses `fixed = TRUE` in
   [`strsplit()`](https://rdrr.io/r/base/strsplit.html) for correct
   separator handling.
-- Modernised deprecated
+- Modernized deprecated
   [`dplyr::mutate_if()`](https://dplyr.tidyverse.org/reference/mutate_all.html)/`mutate_all()`
   to
   [`dplyr::across()`](https://dplyr.tidyverse.org/reference/across.html).
@@ -45,7 +45,7 @@
 
 ## scrutr 0.1.0
 
-Dev enchancements :
+Development enhancements:
 
 - Add examples and tests as far as possible.
 - Correction of warnings and notes.

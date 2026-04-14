@@ -12,7 +12,8 @@ table_prop(..., margin = NULL, round = 3, noquote = FALSE)
 
 - ...:
 
-  Params. Arguments passed to base::table()
+  Arguments passed to
+  [`base::table()`](https://rdrr.io/r/base/table.html).
 
 - margin:
 

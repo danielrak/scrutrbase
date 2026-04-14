@@ -21,7 +21,7 @@ folder_structure_replicate(dir, to)
 
 ## Value
 
-See directory indicated in `to` arg.
+See directory indicated in the `to` argument.
 
 ## Examples
 

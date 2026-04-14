@@ -7,7 +7,13 @@ variable presence, types, and per-dataset summaries.
 ## Usage
 
 ``` r
-inspect_vars(input_path, output_path, output_label, considered_extensions)
+inspect_vars(
+  input_path,
+  output_path,
+  output_label,
+  considered_extensions,
+  encoding = NULL
+)
 ```
 
 ## Arguments
@@ -28,6 +34,15 @@ inspect_vars(input_path, output_path, output_label, considered_extensions)
 
   Character vector. File extensions to include (without the dot, e.g.
   `"rds"` not `".rds"`).
+
+- encoding:
+
+  Character 1L or `NULL`. Encoding passed to
+  [`rio::import()`](http://gesistsa.github.io/rio/reference/import.md)
+  for text-based formats (CSV, TSV). Must be one of `"unknown"`,
+  `"UTF-8"`, or `"Latin-1"`. Defaults to `NULL` (let `rio` /
+  `data.table` pick the default). Ignored for binary formats (e.g. RDS,
+  xlsx).
 
 ## Value
 

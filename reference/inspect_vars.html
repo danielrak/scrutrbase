@@ -46,7 +46,13 @@ and write a comprehensive Excel report covering variable presence, types, and pe
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">inspect_vars</span><span class="op">(</span><span class="va">input_path</span>, <span class="va">output_path</span>, <span class="va">output_label</span>, <span class="va">considered_extensions</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">inspect_vars</span><span class="op">(</span></span>
+<span>  <span class="va">input_path</span>,</span>
+<span>  <span class="va">output_path</span>,</span>
+<span>  <span class="va">output_label</span>,</span>
+<span>  <span class="va">considered_extensions</span>,</span>
+<span>  encoding <span class="op">=</span> <span class="cn">NULL</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -68,6 +74,14 @@ and write a comprehensive Excel report covering variable presence, types, and pe
 <dt id="arg-considered-extensions">considered_extensions<a class="anchor" aria-label="anchor" href="#arg-considered-extensions"></a></dt>
 <dd><p>Character vector. File extensions to include
 (without the dot, e.g. <code>"rds"</code> not <code>".rds"</code>).</p></dd>
+
+
+<dt id="arg-encoding">encoding<a class="anchor" aria-label="anchor" href="#arg-encoding"></a></dt>
+<dd><p>Character 1L or <code>NULL</code>. Encoding passed to
+<code><a href="http://gesistsa.github.io/rio/reference/import.html" class="external-link">rio::import()</a></code> for text-based formats (CSV, TSV). Must be one of
+<code>"unknown"</code>, <code>"UTF-8"</code>, or <code>"Latin-1"</code>. Defaults to
+<code>NULL</code> (let <code>rio</code> / <code>data.table</code> pick the default).
+Ignored for binary formats (e.g. RDS, xlsx).</p></dd>
 
 </dl></div>
     <div class="section level2">

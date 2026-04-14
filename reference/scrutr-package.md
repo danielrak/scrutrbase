@@ -1,10 +1,10 @@
-# scrutr: A Toolkit for Structured Datasets Exploitation
+# scrutr: Tools for Scrutinizing Collections of Structured Datasets
 
-A set of functions for exploiting collections of structured datasets
-(data frames) at scale. Core capabilities include batch inspection and
-profiling, variable presence detection across datasets, type consistency
-checking, format conversion, and file management helpers. Designed for
-workflows involving multiple related datasets with a common structure.
+Provides a coherent interface for exploring and transforming multiple
+related data frames that share a common structure. Complements
+single-dataset inspection tools by operating across an entire collection
+at once. Also includes lightweight utilities for related file and folder
+management tasks.
 
 ## See also
 

@@ -4,7 +4,7 @@
 \name{scrutr-package}
 \alias{scrutr}
 \alias{scrutr-package}
-\title{scrutr: Tools for Scrutinizing Collections of Structured Datasets}
+\title{scrutr: Scrutinizing Collections of Structured Datasets}
 \description{
 Provides a coherent interface for exploring and transforming multiple related data frames that share a common structure. Complements single-dataset inspection tools by operating across an entire collection at once. Also includes lightweight utilities for related file and folder management tasks.
 }

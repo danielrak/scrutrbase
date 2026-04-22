@@ -24,6 +24,14 @@ detect_chars_structure_datasets(
 
 \item{get_output_in_session}{Logical 1L. If TRUE, the function return a list, such that each element element corresponds to pattern detection details for each considered dataset}
 }
+\value{
+If \code{get_output_in_session} is \code{TRUE}, a named list of data
+frames (one per dataset file), each with columns \code{var} (variable name),
+\code{any_defined_structure} (logical), and \code{examples} (character).
+The list is also saved as an RDS file at \code{output_filepath}.
+If \code{get_output_in_session} is \code{FALSE}, the function returns
+\code{NULL} invisibly and is called for its side effect of writing the RDS file.
+}
 \description{
 Detect character structure from datasets
 }

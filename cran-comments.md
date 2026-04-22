@@ -1,17 +1,17 @@
 ## Submission type
 
-This is a new submission.
+This is a resubmission. In this version I have:
 
-The package was developed under the earlier name `industtry` and has been
-renamed to `scrutr` ahead of the first CRAN submission. No previous version
-has been released on CRAN.
+- Removed the redundant "Tools for" from the package title.
+- Added \value tags to the documentation for detect_chars_structure_datasets()
+  and mask_convert_r().
 
 ## Test environments
 
 - Local: Windows 11, R 4.5.x
 - GitHub Actions: ubuntu-latest, macOS-latest, windows-latest (R-release)
 - win-builder: R-release (R 4.5.3) and R-devel (R 4.6.0 beta)
-- R-hub v2: linux, macos-arm64, windows (R-devel / R-release)
+- R-hub v2: linux, macos-arm64, donttest, nosuggests
 
 ## R CMD check results
 

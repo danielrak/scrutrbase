@@ -24,8 +24,11 @@ chars_structure_general(
 \item{named_output}{Logical 1L. If TRUE, output vector is named after corresponding input values.}
 }
 \value{
-Character. Vector describing structure of each element of input_vector,
-see example.
+A character vector describing the generalized structure of each
+element of \code{input_vector}. If \code{named_output} is \code{TRUE},
+the vector is named after the corresponding input values. If
+\code{unique} is \code{TRUE}, only structures for unique input values
+are returned; otherwise one structure per element of \code{input_vector}.
 }
 \description{
 Get any user-defined patterns from each symbol of character vector

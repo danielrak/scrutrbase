@@ -11,6 +11,12 @@ mask_convert_r(output_path, output_filename = "mask_convert_r.xlsx")
 
 \item{output_filename}{Character 1L. File name (with extension) of the mask}
 }
+\value{
+No return value, called for side effects. An Excel file
+(\code{.xlsx}) is written to \code{file.path(output_path, output_filename)}
+containing an empty template with columns \code{folder_path}, \code{file},
+\code{converted_file}, and \code{to_convert}.
+}
 \description{
 Create an excel mask compatible with the convert_r() function
 }

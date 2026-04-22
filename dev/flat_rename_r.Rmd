@@ -28,7 +28,8 @@ pkgload::load_all(export_all = FALSE)
 #' @param input_path Character 1L. Folder containing the set of files to rename
 #' @param output_filename Character 1L. File name of the excel mask.
 #'
-#' @return See the created excel mask in the indicated input_path
+#' @return No return value, called for side effects. An Excel mask file
+#'   is written to \code{input_path}.
 #' 
 #' @importFrom magrittr %>% 
 #' @export
@@ -157,7 +158,8 @@ test_that("Errors are consistent", {
 #' 
 #' @param mask_filepath Character 1L. Entire file path of the excel mask
 #'
-#' @return See file renamed within the mask folder
+#' @return No return value, called for side effects. Files are renamed
+#'   on disk according to the instructions in the Excel mask.
 #' 
 #' @export
 rename_r <- function(mask_filepath){

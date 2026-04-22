@@ -29,7 +29,7 @@
 #'              considered_extensions = "rds")
 #'
 #' # Read back the 10 sheets:
-#' purrr::map(1:10, \(x)
+#' purrr::map(1:10, function(x)
 #'            rio::import(file.path(mydir, "inspect_vars_cardata.xlsx"),
 #'                        sheet = x))
 #'

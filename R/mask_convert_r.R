@@ -3,6 +3,10 @@
 #' Create an excel mask compatible with the convert_r() function
 #' @param output_path Character 1L. Folder path where the mask will be created
 #' @param output_filename Character 1L. File name (with extension) of the mask
+#' @return No return value, called for side effects. An Excel file
+#'   (\code{.xlsx}) is written to \code{file.path(output_path, output_filename)}
+#'   containing an empty template with columns \code{folder_path}, \code{file},
+#'   \code{converted_file}, and \code{to_convert}.
 #' @export
 #'
 #' @examples

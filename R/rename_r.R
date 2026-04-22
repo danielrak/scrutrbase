@@ -4,7 +4,8 @@
 #' 
 #' @param mask_filepath Character 1L. Entire file path of the excel mask
 #'
-#' @return See file renamed within the mask folder
+#' @return No return value, called for side effects. Files are renamed
+#'   on disk according to the instructions in the Excel mask.
 #' 
 #' @export
 #' @examples

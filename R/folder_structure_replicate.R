@@ -4,7 +4,8 @@
 #'
 #' @param dir Character 1L. Path of directory which structure will be replicated
 #' @param to Character 1L. Path of an output directory in which replicated structured will be placed
-#' @return See directory indicated in the \code{to} argument.
+#' @return No return value, called for side effects. The directory
+#'   structure of \code{dir} is recreated inside the \code{to} directory.
 #' @importFrom magrittr %>%
 #' @export
 #'

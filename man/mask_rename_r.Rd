@@ -12,7 +12,8 @@ mask_rename_r(input_path, output_filename = "mask_rename_r.xlsx")
 \item{output_filename}{Character 1L. File name of the excel mask.}
 }
 \value{
-See the created excel mask in the indicated input_path
+No return value, called for side effects. An Excel mask file
+is written to \code{input_path}.
 }
 \description{
 Create an excel mask compatible with the rename_r() function. This must be used on a collection of files, i.e stored within the same folder.

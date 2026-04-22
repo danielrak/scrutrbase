@@ -7,7 +7,8 @@
 #' @param input_path Character 1L. Folder containing the set of files to rename
 #' @param output_filename Character 1L. File name of the excel mask.
 #'
-#' @return See the created excel mask in the indicated input_path
+#' @return No return value, called for side effects. An Excel mask file
+#'   is written to \code{input_path}.
 #' 
 #' @importFrom magrittr %>% 
 #' @export

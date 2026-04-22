@@ -10,7 +10,8 @@ rename_r(mask_filepath)
 \item{mask_filepath}{Character 1L. Entire file path of the excel mask}
 }
 \value{
-See file renamed within the mask folder
+No return value, called for side effects. Files are renamed
+on disk according to the instructions in the Excel mask.
 }
 \description{
 Industrialized file renaming

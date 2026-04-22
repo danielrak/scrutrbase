@@ -25,8 +25,11 @@ pkgload::load_all(export_all = FALSE)
 #' @param patterns_and_replacements Character. Named character vector of patterns (names) and replacements (values)
 #' @param unique Logical 1L. If TRUE, the result is reduced to unique values
 #' @param named_output Logical 1L. If TRUE, output vector is named after corresponding input values. 
-#' @return Character. Vector describing structure of each element of input_vector, 
-#' see example. 
+#' @return A character vector describing the generalized structure of each
+#'   element of \code{input_vector}. If \code{named_output} is \code{TRUE},
+#'   the vector is named after the corresponding input values. If
+#'   \code{unique} is \code{TRUE}, only structures for unique input values
+#'   are returned; otherwise one structure per element of \code{input_vector}.
 #' @export
 #' @examples
 #' 

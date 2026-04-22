@@ -1,4 +1,4 @@
-# scrutr: Tools for Scrutinizing Collections of Structured Datasets
+# scrutr: Scrutinizing Collections of Structured Datasets
 
 Provides a coherent interface for exploring and transforming multiple
 related data frames that share a common structure. Complements

@@ -16,7 +16,8 @@ rename_r(mask_filepath)
 
 ## Value
 
-See file renamed within the mask folder
+No return value, called for side effects. Files are renamed on disk
+according to the instructions in the Excel mask.
 
 ## Examples
 

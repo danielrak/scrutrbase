@@ -18,6 +18,13 @@ mask_convert_r(output_path, output_filename = "mask_convert_r.xlsx")
 
   Character 1L. File name (with extension) of the mask
 
+## Value
+
+No return value, called for side effects. An Excel file (`.xlsx`) is
+written to `file.path(output_path, output_filename)` containing an empty
+template with columns `folder_path`, `file`, `converted_file`, and
+`to_convert`.
+
 ## Examples
 
 ``` r

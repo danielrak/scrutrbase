@@ -77,6 +77,15 @@
 <dd><p>Logical 1L. If TRUE, the function return a list, such that each element element corresponds to pattern detection details for each considered dataset</p></dd>
 
 </dl></div>
+    <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <p>If <code>get_output_in_session</code> is <code>TRUE</code>, a named list of data
+frames (one per dataset file), each with columns <code>var</code> (variable name),
+<code>any_defined_structure</code> (logical), and <code>examples</code> (character).
+The list is also saved as an RDS file at <code>output_filepath</code>.
+If <code>get_output_in_session</code> is <code>FALSE</code>, the function returns
+<code>NULL</code> invisibly and is called for its side effect of writing the RDS file.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>

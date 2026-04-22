@@ -42,6 +42,15 @@ detect_chars_structure_datasets(
   element element corresponds to pattern detection details for each
   considered dataset
 
+## Value
+
+If `get_output_in_session` is `TRUE`, a named list of data frames (one
+per dataset file), each with columns `var` (variable name),
+`any_defined_structure` (logical), and `examples` (character). The list
+is also saved as an RDS file at `output_filepath`. If
+`get_output_in_session` is `FALSE`, the function returns `NULL`
+invisibly and is called for its side effect of writing the RDS file.
+
 ## Examples
 
 ``` r

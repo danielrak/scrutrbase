@@ -40,8 +40,11 @@ chars_structure_general(
 
 ## Value
 
-Character. Vector describing structure of each element of input_vector,
-see example.
+A character vector describing the generalized structure of each element
+of `input_vector`. If `named_output` is `TRUE`, the vector is named
+after the corresponding input values. If `unique` is `TRUE`, only
+structures for unique input values are returned; otherwise one structure
+per element of `input_vector`.
 
 ## Examples
 

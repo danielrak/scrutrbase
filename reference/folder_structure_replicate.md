@@ -21,7 +21,8 @@ folder_structure_replicate(dir, to)
 
 ## Value
 
-See directory indicated in the `to` argument.
+No return value, called for side effects. The directory structure of
+`dir` is recreated inside the `to` directory.
 
 ## Examples
 

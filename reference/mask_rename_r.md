@@ -21,7 +21,8 @@ mask_rename_r(input_path, output_filename = "mask_rename_r.xlsx")
 
 ## Value
 
-See the created excel mask in the indicated input_path
+No return value, called for side effects. An Excel mask file is written
+to `input_path`.
 
 ## Examples
 

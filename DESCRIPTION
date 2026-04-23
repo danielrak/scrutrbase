@@ -1,6 +1,6 @@
 Package: scrutr
 Title: Scrutinizing Collections of Structured Datasets
-Version: 0.3.0
+Version: 0.3.0.9000
 Authors@R:
     person("Daniel", "Rakotomalala", , "rakdanielh@gmail.com", role = c("aut", "cre"))
 Description: Provides a coherent interface for exploring and transforming

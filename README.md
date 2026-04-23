@@ -2,6 +2,8 @@
 # scrutr
 
 <!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/scrutr)](https://CRAN.R-project.org/package=scrutr)
+[![CRAN downloads](https://cranlogs.r-pkg.org/badges/scrutr)](https://cran.r-project.org/package=scrutr)
 [![R-CMD-check](https://github.com/danielrak/scrutr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/danielrak/scrutr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/danielrak/scrutr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/danielrak/scrutr?branch=main)
 <!-- badges: end -->

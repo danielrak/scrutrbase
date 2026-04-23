@@ -1,7 +1,5 @@
 # Changelog
 
-## scrutr (development version)
-
 ## scrutr 0.3.0
 
 CRAN release: 2026-04-22

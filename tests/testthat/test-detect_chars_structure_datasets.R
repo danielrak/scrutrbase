@@ -3,15 +3,17 @@
 test_that("Valid outputs are consistent", {
 
   mydir <- system.file("detect_chars_structure_datasets", package = "scrutr")
+  outfile <- file.path(tempdir(), "detect_college.rds")
 
   detect <- detect_chars_structure_datasets(
   datasets_folderpath = mydir,
   considered_extensions = "xlsx",
   patterns = "(?i)college",
-  output_filepath = file.path(mydir, "detect_college.rds"),
+  output_filepath = outfile,
   get_output_in_session = TRUE)
 
-  expect_true(file.exists(file.path(mydir, "detect_college.rds")))
+  expect_true(file.exists(outfile))
+  on.exit(unlink(outfile), add = TRUE)
 
   expect_equal(head(lapply(detect, head)),
                list(AK.xlsx = structure(list(var = c("School Code", "School Name",

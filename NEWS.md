@@ -1,4 +1,10 @@
-# scrutr (development version)
+# scrutr 0.3.1
+
+## Bug fixes
+
+- Fixed CRAN Debian check failure: `detect_chars_structure_datasets()` example
+  and tests no longer write to the installed package directory. All file outputs
+  now use `tempdir()` with proper cleanup.
 
 # scrutr 0.3.0
 

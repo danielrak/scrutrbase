@@ -1,17 +1,17 @@
 ## Submission type
 
-This is a resubmission. In this version I have:
+This is a patch (0.3.1) to fix a CRAN check failure on Debian.
 
-- Removed the redundant "Tools for" from the package title.
-- Added \value tags to the documentation for detect_chars_structure_datasets()
-  and mask_convert_r().
+The detect_chars_structure_datasets() example and tests wrote an output
+file to the installed package directory via system.file(), which is
+read-only on CRAN's Debian check infrastructure. All file writes in
+examples and tests now use tempdir() with proper cleanup via unlink().
 
 ## Test environments
 
 - Local: Windows 11, R 4.5.x
 - GitHub Actions: ubuntu-latest, macOS-latest, windows-latest (R-release)
-- win-builder: R-release (R 4.5.3) and R-devel (R 4.6.0 beta)
-- R-hub v2: linux, macos-arm64, donttest, nosuggests
+- win-builder: R-release and R-devel
 
 ## R CMD check results
 
@@ -19,9 +19,8 @@ This is a resubmission. In this version I have:
 
 * checking CRAN incoming feasibility ... NOTE
   Maintainer: 'Daniel Rakotomalala <rakdanielh@gmail.com>'
-  New submission
 
-This NOTE is expected for a first submission.
+This NOTE is expected for an update submission.
 
 ## Downstream dependencies
 

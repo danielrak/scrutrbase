@@ -2,6 +2,8 @@
 
 ## scrutr 0.3.1
 
+CRAN release: 2026-04-25
+
 ### Bug fixes
 
 - Fixed CRAN Debian check failure:

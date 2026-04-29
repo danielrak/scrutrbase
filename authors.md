@@ -7,7 +7,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/danielrak/scrutr/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/danielrak/scrutr/blob/v0.3.1/DESCRIPTION)
 
 Rakotomalala D (2026). *scrutr: Scrutinizing Collections of Structured
 Datasets*. R package version 0.3.1,
